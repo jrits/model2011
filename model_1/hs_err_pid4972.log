@@ -1,0 +1,269 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x203b4d00, pid=4972, tid=6660
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) Client VM (19.1-b02 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x203b4d00
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x2335c400):  JavaThread "Thread-3" [_thread_in_native, id=6660, stack(0x00330000,0x00380000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x203b4d00
+
+Registers:
+EAX=0x203b4d00, EBX=0x1ca62e58, ECX=0x2335c518, EDX=0x1ca751d0
+ESP=0x0037f89c, EBP=0x0037f8d8, ESI=0x1ca62e58, EDI=0x2335c400
+EIP=0x203b4d00, EFLAGS=0x00010287
+
+Register to memory mapping:
+
+EAX=0x203b4d00
+0x203b4d00 is pointing to unknown location
+
+EBX=0x1ca62e58
+{method} 
+ - klass: {other class}
+
+ECX=0x2335c518
+0x2335c518 is pointing to unknown location
+
+EDX=0x1ca751d0
+{constant pool cache} 
+ - klass: {other class}
+
+ESP=0x0037f89c
+0x0037f89c is pointing into the stack for thread: 0x2335c400
+"Thread-3" prio=6 tid=0x2335c400 nid=0x1a04 runnable [0x0037f000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x0037f8d8
+0x0037f8d8 is pointing into the stack for thread: 0x2335c400
+"Thread-3" prio=6 tid=0x2335c400 nid=0x1a04 runnable [0x0037f000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x1ca62e58
+{method} 
+ - klass: {other class}
+
+EDI=0x2335c400
+"Thread-3" prio=6 tid=0x2335c400 nid=0x1a04 runnable [0x0037f000]
+   java.lang.Thread.State: RUNNABLE
+
+
+Top of Stack: (sp=0x0037f89c)
+0x0037f89c:   01c09fc7 2335c518 0037f8f0 00000001
+0x0037f8ac:   0037f8e8 1bc97458 0037f8c4 0037f8b8
+0x0037f8bc:   00000000 0037f8f0 1ca751d0 00000000
+0x0037f8cc:   1ca62e58 00000000 0037f8e8 0037f91c
+0x0037f8dc:   01c02f45 00000000 01c082e9 03df0880
+0x0037f8ec:   00000001 03d32bf0 03df08c0 03df08c0
+0x0037f8fc:   0037f8fc 1ca62393 0037f944 1ca751d0
+0x0037f90c:   00000000 1ca627d0 0037f8e8 0037f938 
+
+Instructions: (pc=0x203b4d00)
+0x203b4cf0:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000005]
+
+Stack: [0x00330000,0x00380000],  sp=0x0037f89c,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x203b4d00
+j  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;Z)Ljava/lang/Object;+315
+j  com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;+214
+j  com.sun.jna.Library$Handler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+341
+j  $Proxy0.InternetCloseHandle(Lcom/change_vision/platform/connectors/wininet/WinInet$HINTERNET;)Z+16
+j  com.change_vision.platform.connectors.impl.InternetHandle.closeQuietly()Z+13
+j  com.change_vision.platform.connectors.NativeHttpURLConnection.disconnect()V+11
+j  JP.co.esm.caddies.jomt.jutil.x.a(Ljava/lang/String;Ljava/util/Map;Z)Lorg/w3c/dom/Document;+40
+j  JP.co.esm.caddies.jomt.jutil.W.a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)[Ljava/lang/String;+51
+j  JP.co.esm.caddies.jomt.license.l.g(Ljava/lang/String;)Z+138
+j  JP.co.esm.caddies.jomt.license.l.f(Ljava/lang/String;)V+18
+j  JP.co.esm.caddies.jomt.license.x.a()V+8
+j  JP.co.esm.caddies.jomt.license.x.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0c61]
+V  [jvm.dll+0xf0cbb]
+V  [jvm.dll+0x11b4b9]
+V  [jvm.dll+0x1e4624]
+V  [jvm.dll+0x18317c]
+C  [msvcr71.dll+0x9565]
+C  [kernel32.dll+0x51114]
+C  [ntdll.dll+0x5b429]
+C  [ntdll.dll+0x5b3fc]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.jna.Function.invokeInt(I[Ljava/lang/Object;)I+0
+j  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;Z)Ljava/lang/Object;+315
+j  com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;+214
+j  com.sun.jna.Library$Handler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+341
+j  $Proxy0.InternetCloseHandle(Lcom/change_vision/platform/connectors/wininet/WinInet$HINTERNET;)Z+16
+j  com.change_vision.platform.connectors.impl.InternetHandle.closeQuietly()Z+13
+j  com.change_vision.platform.connectors.NativeHttpURLConnection.disconnect()V+11
+j  JP.co.esm.caddies.jomt.jutil.x.a(Ljava/lang/String;Ljava/util/Map;Z)Lorg/w3c/dom/Document;+40
+j  JP.co.esm.caddies.jomt.jutil.W.a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)[Ljava/lang/String;+51
+j  JP.co.esm.caddies.jomt.license.l.g(Ljava/lang/String;)Z+138
+j  JP.co.esm.caddies.jomt.license.l.f(Ljava/lang/String;)V+18
+j  JP.co.esm.caddies.jomt.license.x.a()V+8
+j  JP.co.esm.caddies.jomt.license.x.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x233f3c00 JavaThread "Thread-1" daemon [_thread_in_native, id=5072, stack(0x22210000,0x22260000)]
+  0x01a29400 JavaThread "TimerQueue" daemon [_thread_blocked, id=6724, stack(0x20420000,0x20470000)]
+  0x01aad000 JavaThread "DestroyJavaVM" [_thread_blocked, id=3592, stack(0x00380000,0x003d0000)]
+=>0x2335c400 JavaThread "Thread-3" [_thread_in_native, id=6660, stack(0x00330000,0x00380000)]
+  0x230c8400 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=3644, stack(0x22bc0000,0x22c10000)]
+  0x2009ac00 JavaThread "AWT-Shutdown" [_thread_blocked, id=4732, stack(0x22b10000,0x22b60000)]
+  0x2009a400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3564, stack(0x22ac0000,0x22b10000)]
+  0x1ffcbc00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=8004, stack(0x229a0000,0x229f0000)]
+  0x1ffca400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=7960, stack(0x22950000,0x229a0000)]
+  0x1ffc9400 JavaThread "Attach Listener" daemon [_thread_blocked, id=6672, stack(0x22900000,0x22950000)]
+  0x1ffc6400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7024, stack(0x228b0000,0x22900000)]
+  0x01ac7000 JavaThread "Finalizer" daemon [_thread_blocked, id=4976, stack(0x20290000,0x202e0000)]
+  0x01ac2000 JavaThread "Reference Handler" daemon [_thread_blocked, id=7756, stack(0x1ff20000,0x1ff70000)]
+
+Other Threads:
+  0x1ffc2c00 VMThread [stack: 0x1fe50000,0x1fea0000] [id=4924]
+  0x1ffcd400 WatcherThread [stack: 0x229f0000,0x22a40000] [id=1928]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 12672K, used 3022K [0x03c80000, 0x04a30000, 0x0bc80000)
+  eden space 11328K,  14% used [0x03c80000, 0x03e238a8, 0x04790000)
+  from space 1344K, 100% used [0x04790000, 0x048e0000, 0x048e0000)
+  to   space 1344K,   0% used [0x048e0000, 0x048e0000, 0x04a30000)
+ tenured generation   total 27932K, used 17596K [0x0bc80000, 0x0d7c7000, 0x1bc80000)
+   the space 27932K,  62% used [0x0bc80000, 0x0cdaf330, 0x0cdaf400, 0x0d7c7000)
+ compacting perm gen  total 19456K, used 19387K [0x1bc80000, 0x1cf80000, 0x1fc80000)
+   the space 19456K,  99% used [0x1bc80000, 0x1cf6edf8, 0x1cf6ee00, 0x1cf80000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\astah-professional\jre\bin\javaw.exe
+0x77910000 - 0x77a4d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75d60000 - 0x75e34000 	C:\Windows\system32\kernel32.dll
+0x75c80000 - 0x75cca000 	C:\Windows\system32\KERNELBASE.dll
+0x77280000 - 0x77320000 	C:\Windows\system32\ADVAPI32.dll
+0x75f10000 - 0x75fbc000 	C:\Windows\system32\msvcrt.dll
+0x76150000 - 0x76169000 	C:\Windows\SYSTEM32\sechost.dll
+0x76170000 - 0x76211000 	C:\Windows\system32\RPCRT4.dll
+0x77320000 - 0x773e9000 	C:\Windows\system32\USER32.dll
+0x76440000 - 0x7648e000 	C:\Windows\system32\GDI32.dll
+0x76490000 - 0x7649a000 	C:\Windows\system32\LPK.dll
+0x771e0000 - 0x7727d000 	C:\Windows\system32\USP10.dll
+0x764c0000 - 0x764df000 	C:\Windows\system32\IMM32.DLL
+0x76230000 - 0x762fc000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\astah-professional\jre\bin\msvcr71.dll
+0x6d7f0000 - 0x6da96000 	C:\Program Files\astah-professional\jre\bin\client\jvm.dll
+0x74220000 - 0x74252000 	C:\Windows\system32\WINMM.dll
+0x75990000 - 0x759db000 	C:\Windows\system32\apphelp.dll
+0x6d700000 - 0x6d722000 	C:\Program Files\astah-professional\jre\bin\splashscreen.dll
+0x748a0000 - 0x748e0000 	C:\Windows\system32\uxtheme.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\astah-professional\jre\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\astah-professional\jre\bin\java.dll
+0x6d280000 - 0x6d288000 	C:\Program Files\astah-professional\jre\bin\hpi.dll
+0x764a0000 - 0x764a5000 	C:\Windows\system32\PSAPI.DLL
+0x75fc0000 - 0x7611c000 	C:\Windows\system32\ole32.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\astah-professional\jre\bin\zip.dll
+0x759e0000 - 0x759ec000 	C:\Windows\system32\CRYPTBASE.dll
+0x77ab0000 - 0x77b33000 	C:\Windows\system32\CLBCatQ.DLL
+0x75e80000 - 0x75f0f000 	C:\Windows\system32\OLEAUT32.dll
+0x76540000 - 0x77189000 	C:\Windows\system32\SHELL32.dll
+0x764e0000 - 0x76537000 	C:\Windows\system32\SHLWAPI.dll
+0x74970000 - 0x74b0e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x74450000 - 0x74463000 	C:\Windows\system32\dwmapi.dll
+0x6d000000 - 0x6d14a000 	C:\Program Files\astah-professional\jre\bin\awt.dll
+0x733b0000 - 0x73401000 	C:\Windows\system32\WINSPOOL.DRV
+0x6d230000 - 0x6d27f000 	C:\Program Files\astah-professional\jre\bin\fontmanager.dll
+0x6d600000 - 0x6d613000 	C:\Program Files\astah-professional\jre\bin\net.dll
+0x75e40000 - 0x75e75000 	C:\Windows\system32\WS2_32.dll
+0x76220000 - 0x76226000 	C:\Windows\system32\NSI.dll
+0x754b0000 - 0x754ec000 	C:\Windows\system32\mswsock.dll
+0x754a0000 - 0x754a6000 	C:\Windows\System32\wship6.dll
+0x6d620000 - 0x6d629000 	C:\Program Files\astah-professional\jre\bin\nio.dll
+0x74140000 - 0x74150000 	C:\Windows\system32\NLAapi.dll
+0x75370000 - 0x753b4000 	C:\Windows\system32\DNSAPI.dll
+0x717e0000 - 0x717e8000 	C:\Windows\System32\winrnr.dll
+0x717d0000 - 0x717e0000 	C:\Windows\system32\napinsp.dll
+0x717b0000 - 0x717c2000 	C:\Windows\system32\pnrpnsp.dll
+0x71780000 - 0x717a7000 	C:\Program Files\Common Files\Microsoft Shared\Windows Live\WLIDNSP.DLL
+0x74fa0000 - 0x74fa5000 	C:\Windows\System32\wshtcpip.dll
+0x73500000 - 0x7351c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x734f0000 - 0x734f7000 	C:\Windows\system32\WINNSI.DLL
+0x71770000 - 0x71776000 	C:\Windows\system32\rasadhlp.dll
+0x73320000 - 0x73358000 	C:\Windows\System32\fwpuclnt.dll
+0x754f0000 - 0x75506000 	C:\Windows\system32\CRYPTSP.dll
+0x75290000 - 0x752cb000 	C:\Windows\system32\rsaenh.dll
+0x75070000 - 0x75087000 	C:\Windows\system32\USERENV.dll
+0x75a60000 - 0x75a6b000 	C:\Windows\system32\profapi.dll
+0x74f10000 - 0x74f19000 	C:\Windows\system32\VERSION.dll
+0x77810000 - 0x77905000 	C:\Windows\system32\wininet.dll
+0x76300000 - 0x76436000 	C:\Windows\system32\urlmon.dll
+0x75b40000 - 0x75c5c000 	C:\Windows\system32\CRYPT32.dll
+0x75ad0000 - 0x75adc000 	C:\Windows\system32\MSASN1.dll
+0x77590000 - 0x7778a000 	C:\Windows\system32\iertutil.dll
+0x75970000 - 0x7598a000 	C:\Windows\system32\SspiCli.dll
+0x764b0000 - 0x764b3000 	C:\Windows\system32\Normaliz.dll
+0x73650000 - 0x736a2000 	C:\Windows\system32\RASAPI32.dll
+0x73b40000 - 0x73b55000 	C:\Windows\system32\rasman.dll
+0x73640000 - 0x7364d000 	C:\Windows\system32\rtutils.dll
+0x73520000 - 0x73526000 	C:\Windows\system32\sensapi.dll
+0x742f0000 - 0x74311000 	C:\Windows\system32\ntmarta.dll
+0x77190000 - 0x771d5000 	C:\Windows\system32\WLDAP32.dll
+0x75a50000 - 0x75a5e000 	C:\Windows\system32\RpcRtRemote.dll
+0x75ae0000 - 0x75b0d000 	C:\Windows\system32\wintrust.dll
+0x75300000 - 0x7533a000 	C:\Windows\system32\schannel.DLL
+0x75120000 - 0x75128000 	C:\Windows\system32\credssp.dll
+0x75830000 - 0x75838000 	C:\Windows\system32\secur32.dll
+0x75620000 - 0x75658000 	C:\Windows\system32\ncrypt.dll
+0x75600000 - 0x75617000 	C:\Windows\system32\bcrypt.dll
+0x751b0000 - 0x751ed000 	C:\Windows\system32\bcryptprimitives.dll
+0x75050000 - 0x75066000 	C:\Windows\system32\GPAPI.dll
+0x73530000 - 0x7354c000 	C:\Windows\system32\cryptnet.dll
+0x729a0000 - 0x729b5000 	C:\Windows\system32\Cabinet.dll
+0x75090000 - 0x7509e000 	C:\Windows\system32\DEVRTL.dll
+
+VM Arguments:
+jvm_args: -Xms16m -Xmx384m 
+java_command: C:\Program Files\astah-professional\\astah-pro.jar C:\cygwin\home\z00s000704\model2011.new\model_1\mikio.asta
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\astah-professional\\jre\bin;C:\ORACLE9i\bin;C:\Program Files\Oracle\jre\1.3.1\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Windows Live\Shared;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;c:\cygwin\gnuarm\bin;C:\VXIPNP\WinNT\Bin
+USERNAME=z00s000704
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 3582256k(1690184k free), swap 7162748k(5097648k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.1-b02) for windows-x86 JRE (1.6.0_24-b07), built on Feb  2 2011 17:44:41 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sat Sep 03 22:52:10 2011
+elapsed time: 7 seconds
+
